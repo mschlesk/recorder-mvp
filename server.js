@@ -1,6 +1,8 @@
+var morgan = require('morgan');
 var app = require('./recorder.js');
 var port = 8085;
 
+app.use(morgan('dev'));
 
 app.listen(
   port,
