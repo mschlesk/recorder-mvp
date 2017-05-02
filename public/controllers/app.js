@@ -4,8 +4,11 @@ angular.module('musicApp', [])
   return {
     bindToController: true,
     controllerAs: 'appCtrl',
-    controller: function($scope, $http) {
+    controller: function($scope, linksApi) {
       console.log($scope);
+      linksApi.fetchLinks(function() {
+
+      });
     },
     // restrict: 'A', // E = Element, A = Attribute, C = Class, M = Comment
     templateUrl: '/views/app.ejs'
