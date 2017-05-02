@@ -20,7 +20,7 @@ app.get('/', function(req, res) {
 });
 
 // API Routes
-app.get('/links', apiRoutes.logRequest, apiRoutes.getLinks);
-app.post('/links', apiRoutes.logRequest, apiRoutes.postLinks);
+app.get('/api/links', apiRoutes.logRequest, apiRoutes.getLinks);
+app.post('/api/links', apiRoutes.logRequest, apiRoutes.postLinks);
 
 module.exports = app;
