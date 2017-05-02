@@ -15,17 +15,21 @@ var routes = {
 
   postLinks: function(req, res) {
     var url = req.body.url;
+    // Link.findOne({url: req.body.url}, { url: 1, dateCreated: 1 }).then(function(found) {
     Link.findOne({url: req.body.url}).then(function(found) {
       if (found) { // link already exists
         console.log('    SUCCESS: Successfully fetched link from database');
+        res.json(found);
       } else {  // new link
         console.log('    SUCCESS: Unable to fetch link from database.\n      Creating new link...');
+        // Link.create({ url: url }, { url: 1, dateCreated: 1 }).then(function(link) {
         Link.create({ url: url }).then(function(link) {
           if (!link) {  // handle error
             console.error('      Failed to  create link!');
           } else {
             console.log('      Link created!');
           }
+          res.json(link);
         });
       }
     })
