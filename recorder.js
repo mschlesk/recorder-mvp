@@ -19,4 +19,8 @@ app.get('/', function(req, res) {
   res.render('index');
 });
 
+// API Routes
+app.get('/links', apiRoutes.getLinks);
+app.post('/links', apiRoutes.postLinks);
+
 module.exports = app;
