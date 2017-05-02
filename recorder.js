@@ -12,7 +12,7 @@ app.set('view engine', 'ejs');
 
 // Parse request body
 app.use(bodyparser.json());
-app.use(bodyparser.urlencoded());
+app.use(bodyparser.urlencoded({extended: true}));
 app.use(express.static(__dirname + '/public'));
 
 app.get('/', function(req, res) {
