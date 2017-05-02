@@ -13,3 +13,5 @@ db.on('error', function(error) {
 db.on('open', function() {
   console.log(`SUCCESS: Successfully connected to database at ${databaseURL}`);
 });
+
+module.exports = db;
