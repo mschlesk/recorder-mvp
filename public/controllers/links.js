@@ -1,14 +1,14 @@
 angular.module('musicApp')
-.controller('linksController', function() {
-
-})
 .directive('links', function() {
   return {
     scope: {
-      links: '<'
+      linksArray: '<'
     },
-    controllerAs: 'ctrl',
-    controller: 'linksController',
+    controllerAs: 'linksCtrl',
+    bindToController: true,
+    controller: function() {
+      console.log(this);
+    },
     templateUrl: 'views/links.ejs'
   }
 });
