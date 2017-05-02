@@ -14,13 +14,19 @@ var routes = {
   },
 
   postLinks: function(req, res) {
-    Link.findOne({url: req.body.url}).then(function(error, found) {
-      if (error) {  // handle error
-        console.error(`  FAILURE: Failed to fetch link from database:\n    "${url}"`);
-      } else if (found) { // link already exists
-        console.log(`  SUCCESS: Successfully fetched link from database:\n    "${url}"`);
+    var url = req.body.url;
+    Link.findOne({url: req.body.url}).then(function(found) {
+      if (found) { // link already exists
+        console.log('    SUCCESS: Successfully fetched link from database');
       } else {  // new link
-        console.log(`  SUCCESS: Unable to fetch link from database. Creating new link.:\n    "${url}"`);
+        console.log('    SUCCESS: Unable to fetch link from database.\n      Creating new link...');
+        Link.create({ url: url }).then(function(link) {
+          if (!link) {  // handle error
+            console.error('      Failed to  create link!');
+          } else {
+            console.log('      Link created!');
+          }
+        });
       }
     })
   }
