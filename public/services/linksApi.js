@@ -6,7 +6,7 @@ angular.module('musicApp')
       callback(response.data);
     }, function(response) {
       console.error(`Failed to fetch links from /api/links, status code: ${response.status}`);
-      // callback(null);
+      callback([]);
     });
   };
 });
