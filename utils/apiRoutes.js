@@ -14,7 +14,15 @@ var routes = {
   },
 
   postLinks: function(req, res) {
-    // console.log('Made it past middleware!');
+    Link.findOne({url: req.body.url}).then(function(error, found) {
+      if (error) {  // handle error
+        console.error(`  FAILURE: Failed to fetch link from database:\n    "${url}"`);
+      } else if (found) { // link already exists
+        console.log(`  SUCCESS: Successfully fetched link from database:\n    "${url}"`);
+      } else {  // new link
+        console.log(`  SUCCESS: Unable to fetch link from database. Creating new link.:\n    "${url}"`);
+      }
+    })
   }
 };
 
