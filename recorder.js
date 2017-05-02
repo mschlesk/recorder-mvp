@@ -1,4 +1,5 @@
 var db = require('./db/config');
+var Link = require('./public/models/link');
 
 var express = require('express');
 var app = express();
