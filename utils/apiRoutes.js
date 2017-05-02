@@ -26,10 +26,11 @@ var routes = {
         Link.create({ url: url }).then(function(link) {
           if (!link) {  // handle error
             console.error('      Failed to  create link!');
+            res.status(500).send();
           } else {
             console.log('      Link created!');
+            res.json(link);
           }
-          res.json(link);
         });
       }
     })
