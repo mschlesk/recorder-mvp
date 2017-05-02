@@ -6,7 +6,10 @@ var routes = {
   },
 
   postLinks: function(req, res) {
-
+    console.log('  POST request received\n  body:');
+    for (var key in req.body) {
+      console.log(`    ${key}: ${req.body[key]}`);
+    }
   }
 };
 
