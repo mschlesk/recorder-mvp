@@ -10,7 +10,12 @@ var routes = {
   },
 
   getLinks: function(req, res) {
-
+    Link.find({}).then(function(links) {
+      if (!links) {
+        // something bad has happened? Or there just aren't any links?
+      }
+      res.json(links);
+    });
   },
 
   postLinks: function(req, res) {
