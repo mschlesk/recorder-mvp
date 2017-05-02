@@ -7,7 +7,7 @@ angular.module('musicApp')
     controllerAs: 'linksCtrl',
     bindToController: true,
     controller: function() {
-      console.log(this);
+      // console.log(this);
     },
     templateUrl: 'views/links.ejs'
   }

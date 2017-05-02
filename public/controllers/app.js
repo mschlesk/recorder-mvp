@@ -10,7 +10,7 @@ angular.module('musicApp', [])
         this.links = links;
       }
       linksApi.fetchLinks(this.linksHandler);
-      console.log($scope);
+      // console.log(this);
     },
     // restrict: 'A', // E = Element, A = Attribute, C = Class, M = Comment
     templateUrl: '/views/app.ejs'
