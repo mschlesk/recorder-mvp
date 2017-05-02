@@ -1,6 +1,8 @@
 var db = require('./db/config');
 var Link = require('./public/models/link');
 
+var apiRoutes = require('./utils/apiRoutes');
+
 var express = require('express');
 var app = express();
 
