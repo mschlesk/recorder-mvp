@@ -10,4 +10,8 @@ var linkSchema = mongoose.Schema({
   dateCreated: { type: Date, default: Date.now }
 });
 
+// linkSchema.methods.delete = function() {};
+
 var Link = mongoose.model('Link', linkSchema);
+
+module.exports = Link;
