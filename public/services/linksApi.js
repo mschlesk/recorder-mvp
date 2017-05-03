@@ -9,4 +9,16 @@ angular.module('musicApp')
       callback([]);
     });
   };
+
+  this.postLink = function(linkObject, callback) {
+    $http.post('/api/links', linkObject).then(function(response) {
+      console.log('Posted link to server');
+      console.log(response.body);
+      callback(response.body);
+    }, function(response) {
+      console.error(`Failed to post link to /api/links, status code: ${response.status}`);
+      callback(null);
+    });
+  };
 });
+
