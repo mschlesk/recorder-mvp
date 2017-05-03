@@ -5,8 +5,8 @@ var db = require('../../db/config');
 var linkSchema = mongoose.Schema({
   url: String,
   title: String,
-  // artist: String,
-  // album: String,
+  artist: String,
+  album: String,
   // host: String,
   dateCreated: { type: Date, default: Date.now }
 });

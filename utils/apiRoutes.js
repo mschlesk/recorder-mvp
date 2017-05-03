@@ -20,6 +20,8 @@ var routes = {
 
   postLinks: function(req, res) {
     var url = req.body.url;
+    var title = req.body.title;
+    var artist = req.body.artist;
     // Link.findOne({url: req.body.url}, { url: 1, dateCreated: 1 }).then(function(found) {
     Link.findOne({url: req.body.url}).then(function(found) {
       if (found) { // link already exists
@@ -28,7 +30,7 @@ var routes = {
       } else {  // new link
         console.log('    SUCCESS: Unable to fetch link from database.\n      Creating new link...');
         // Link.create({ url: url }, { url: 1, dateCreated: 1 }).then(function(link) {
-        Link.create({ url: url }).then(function(link) {
+        Link.create({ url: url, title: title, artist: artist }).then(function(link) {
           if (!link) {  // handle error
             console.error('      Failed to  create link!');
             res.status(500).send();

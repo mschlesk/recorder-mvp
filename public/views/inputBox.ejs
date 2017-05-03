@@ -1,7 +1,9 @@
 <div>
   <div class="container">
-    <input type="text" placeholder="Add a url..."/>
-    <button><span class="glyphicon glyphicon-plus">CLICK</span></button>
+    <input type="text" ng-model="inputCtrl.inputUrl" placeholder="Add a url..."/>
+    <input type="text" ng-model="inputCtrl.inputTitle" placeholder="Title..."/>
+    <input type="text" ng-model="inputCtrl.inputArtist" placeholder="Artist..."/>
+    <button ng-click="inputCtrl.onClick()"><span class="glyphicon glyphicon-plus">CLICK</span></button>
   </div>
   <div class="container">
     <button><span class="glyphicon glyphicon-headphones">SEARCH</span></button>
